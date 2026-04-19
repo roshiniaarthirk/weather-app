@@ -32,7 +32,7 @@ function Weather() {
 
   useEffect(() => {
     getWeather();
-  }, []);
+  }, [getWeather]);
 
   // 🌈 Dynamic background logic
   const getWeatherClass = () => {
