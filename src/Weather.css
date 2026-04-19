@@ -1,0 +1,150 @@
+/* ===== BASE ===== */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  transition: background 0.5s ease;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ☀️ Sunny */
+.container.sunny {
+  background: linear-gradient(135deg, #fceabb, #f8b500);
+}
+
+/* ☁️ Cloudy */
+.container.cloudy {
+  background: linear-gradient(135deg, #bdc3c7, #2c3e50);
+}
+
+/* 🌧 Rain */
+.container.rain {
+  background: linear-gradient(135deg, #4b79a1, #283e51);
+}
+
+/* 🌫 Mist */
+.container.mist {
+  background: linear-gradient(135deg, #757f9a, #d7dde8);
+}
+
+/* 🌙 Night */
+.container.night {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* ⭐ Stars */
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.stars::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  box-shadow:
+    50px 80px white,
+    120px 150px white,
+    200px 40px white,
+    300px 200px white,
+    400px 100px white,
+    500px 250px white,
+    600px 120px white,
+    700px 300px white,
+    800px 60px white,
+    900px 180px white,
+    1000px 90px white;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== CARD ===== */
+.card {
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 25px;
+  border-radius: 20px;
+  width: 280px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ===== INPUT ===== */
+input {
+  padding: 12px;
+  width: 200px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin-right: 10px;
+}
+
+/* ===== BUTTON ===== */
+button {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #ff7eb3;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: #ff4e9b;
+}
+
+/* ===== ICON ===== */
+.card img {
+  width: 80px;
+}
+
+/* ===== ERROR ===== */
+.error {
+  color: #ff4e4e;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  input {
+    width: 150px;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
